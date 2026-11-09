@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Husband♡</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #000000, #000000, #000000);
+            color: white;
+        }
+
+        .navbar {
+            height: 70px;
+            background-color: #08090a;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+        }
+
+        .logo {
+            color: #e51b2b;
+            font-size: 24px;
+            font-weight: bold;
+
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 25px 0;
+        }
+
+        .nav-links a:hover {
+            color: #e51b2b;
+        }
+
+        .nav-links .active {
+            color: #e51b2b;
+            border-bottom: 2px solid #e51b2b;
+        }
+
+        .moon {
+            color: #ddd;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 310px;
+            overflow: hidden;
+
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            color: white;
+        }
+
+        .hero-content span {
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin: 10px 0;
+            font-family: Georgia, serif;
+        }
+
+        .hero-content p {
+            margin-bottom: 25px;
+        }
+
+        .hero-content button {
+            background: #ed1b2f;
+            color: white;
+            border: none;
+            outline: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.6s;
+        }
+
+        .hero-content button:hover {
+                       background-color: #350505;
+        }
+
+
+        .tracks {
+            background-color: #08090a;
+            padding: 35px 7px;
+            color: white;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: #e51b2b;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin: 5px 0 0;
+        }
+
+        .section-title a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        /* کارت ها */
+
+        .track-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .track-card {
+            flex: 1;
+            background: #111315;
+            border: 1px solid #25282b;
+            overflow: hidden;
+        }
+
+        .track-image img {
+            width: 100%;
+            height: 125px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .track-card:hover .track-image img {
+            transform: scale(1.05);
+        }
+
+        /* song info */
+
+        .track-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 12px;
+        }
+
+        .track-info h3 {
+            font-size: 13px;
+            margin: 0 0 5px;
+            font-weight: bold;
+        }
+
+        .track-info span {
+            color: #aaa;
+            font-size: 13px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .track-info button {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #777;
+
+            background: transparent;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .track-info button:hover {
+            background: #e51b2b;
+            border-color: #e51b2b;
+        }
+
+
+        .about {
+            background: #08090a;
+            color: white;
+
+            display: flex;
+            align-items: stretch;
+
+            padding: 0;
+            margin-top: 20px;
+            border-top: 1px solid #25282b;
+            border-bottom: 1px solid #25282b;
+        }
+
+        .about-image {
+            width: 50%;
+
+
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content {
+            width: 50%;
+            padding: 35px 0 35px 60px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-label {
+            color: #e51b2b;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .about-content h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin: 7px 0 12px;
+        }
+
+        .about-content p {
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 520px;
+        }
+
+
+        /* bot info */
+
+        .about-info {
+            display: flex;
+            gap: 35px;
+
+            margin-top: 25px;
+            padding-top: 20px;
+
+            border-top: 1px solid #292c2f;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item .icon {
+            font-size: 22px;
+            color: #ddd;
+        }
+
+        .info-item div {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .info-item small {
+            color: #999;
+            font-size: 10px;
+        }
+
+        .info-item strong {
+            color: #ddd;
+            font-size: 10px;
+            font-weight: normal;
+        }
+
+
+        @media screen and (max-width:600px) {
+            .about {
+                flex-direction: column;
+
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
+            .about-image img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+            }
+
+            .about-content {
+                width: auto;
+                padding: 35px 7%;
+            }
+
+            .about-info {
+                flex-wrap: wrap;
+                gap: 25px;
+            }
+
+            .tracks {
+                padding: 30px 5%;
+            }
+
+            .section-title {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+
+            .section-title a {
+                font-size: 11px;
+            }
+
+            .track-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .track-card {
+                width: 100%;
+                flex: none;
+            }
+
+            .track-card img {
+                height: 200px;
+            }
+
+            .track-info {
+                padding: 15px;
+            }
+
+            .track-info h3 {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+
+            .track-container {
+                flex-wrap: wrap;
+            }
+
+            .track-card {
+                flex: 1 1 calc(50% - 10px);
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
+            .about-image img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+            }
+
+            .about-content {
+                width: auto;
+                padding: 35px 7%;
+            }
+
+            .about-info {
+                flex-wrap: wrap;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">The Weeknd</div>
+
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Tracks</a>
+                <span class="moon">☾</span>
+            </div>
+        </nav>
+        <section class="hero">
+            <img src="image/abel.jpg" alt="THE WEEKND">
+            <div class="hero-content">
+                <span><b>XO</b> is the only time investment.</span>
+                <h1>After Hours</h1>
+                <p>Without you I can't breathe..</p>
+
+                <audio id="music" src="music/afterhours.mp3"></audio>
+                <button onclick="document.getElementById('music').play()">▶ &nbsp; Listen Now</button>
+            </div>
+        </section>
+
+
+        <section class="tracks">
+
+            <div class="section-title">
+
+
+                <div>
+                    <span>TRACKS</span>
+
+                    <h2>Popular Tracks</h2>
+                </div>
+
+                <a href="#" class="view-all">View All Tracks →</a>
+            </div>
+
+            <div class="track-container">
+
+                <div class="track-card">
+
+                    <div class="track-image">
+                        <img src="image/starboy.jpg" alt="Star Boy">
+
+
+                    </div>
+
+                    <div class="track-info">
+
+                        <div>
+                            <h3>Nothin' Without You</h3>
+                            <span>If I die tonight, would you regret it..?</span>
+                        </div>
+
+                        <button onclick="document.getElementById('song1').play()">▶</button>
+                    </div>
+
+                    <audio id="song1">
+                        <source src="music/Nothing-Without-You-320.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+
+
+
+
+                <div class="track-card">
+                    <div class="track-image">
+                        <img src="image/beauty.jpg" alt="AS YOU ARE">
+
+
+                    </div>
+
+                    <div class="track-info">
+
+                        <div>
+                            <h3>As You Are</h3>
+                            <span>Show me your broken heart..</span>
+                        </div>
+
+                        <button onclick="document.getElementById('song2').play()">▶</button>
+                    </div>
+                    <audio id="song2">
+                        <source src="music/As-You-Are-320.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+
+
+                <div class="track-card">
+                    <div class="track-image">
+                        <img src="image/mydear.jpg" alt="I WAS NEVER THERE">
+                    </div>
+                    <div class="track-info">
+                        <div>
+                            <h3>I Was Never There</h3>
+                            <span>Now I know what love is, and I know it ain't you for sure..!</span>
+                        </div>
+                        <button onclick="document.getElementById('song3').play()">▶</button>
+                    </div>
+                    <audio id="song3">
+                        <source src="music/I-Was-Never-There.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="track-card">
+                    <div class="track-image">
+                        <img src="image/houseof.jpg" alt="SAME OLD SONG">
+                    </div>
+                    <div class="track-info">
+                        <div>
+                            <h3>Same Old Song</h3>
+                            <span>What makes you think that you can ever do me right?</span>
+                        </div>
+                        <button onclick="document.getElementById('song4').play()">▶</button>
+                    </div>
+                    <audio id="song4">
+                        <source src="music/Same-Old-Song-320.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+
+                <div class="track-card">
+                    <div class="track-image">
+                        <img src="image/hurryup.jpg" alt="HURRY UP TOMORROW">
+                    </div>
+                    <div class="track-info">
+                        <div>
+                            <h3>Hurry Up Tomarrow</h3>
+                            <span>Who else has to pay for my sins..?!</span>
+                        </div>
+                        <button onclick="document.getElementById('song5').play()">▶</button>
+                    </div>
+                    <audio id="song5">
+                        <source src="music/Hurry Up Tomorrow.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+
+                <div class="track-card">
+                    <div class="track-image">
+                        <img src="image/dawn.jpg" alt="STARRY EYES">
+                    </div>
+                    <div class="track-info">
+                        <div>
+                            <h3>Starry Eyes</h3>
+                            <span>Back then, I was starry eyed, and now I'm so cynical..</span>
+                        </div>
+                        <button onclick="document.getElementById('song6').play()">▶</button>
+                    </div>
+                    <audio id="song6">
+                        <source src="music/Starry-Eyes-320.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+
+                <div class="track-card">
+                    <div class="track-image">
+                        <img src="image/kissland.jpg" alt="KISS LAND">
+
+
+                    </div>
+
+                    <div class="track-info">
+
+                        <div>
+                            <h3>Kiss Land</h3>
+                            <span>I don't care about you, why you worried 'bout me?</span>
+                        </div>
+
+                        <button onclick="document.getElementById('song7').play()">▶</button>
+                    </div>
+                    <audio id="song7">
+                        <source src="music/Kiss Land.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <section class="about">
+
+                <!-- عکس -->
+                <div class="about-image">
+                    <img src="image/abl7.jpg" alt="The Weeknd">
+                </div>
+
+                <!-- متن -->
+                <div class="about-content">
+
+                    <span class="about-label">ABOUT</span>
+
+                    <h2>The Weeknd</h2>
+
+                    <p>
+                        Abel Tesfaye, known professionally as The Weeknd, is a
+                        Canadian singer, songwriter, and record producer. His music
+                        blends R&B, pop, and electronic elements, creating a unique
+                        sound that has redefined modern music.
+                    </p>
+
+                    <!-- اطلاعات -->
+                    <div class="about-info">
+
+                        <div class="info-item">
+                            <span class="icon">▣</span>
+                            <div>
+                                <small>Born</small>
+                                <strong>Feb 16, 1990</strong>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="icon">⌖</span>
+                            <div>
+                                <small>From</small>
+                                <strong>Toronto, Canada</strong>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="icon">♫</span>
+                            <div>
+                                <small>Genres</small>
+                                <strong>R&B / Pop / Electronic</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+    </div>
+</body>
+
+</html>
